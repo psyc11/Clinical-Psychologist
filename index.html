@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adil Shah - Clinical Psychologist & Motivational Speaker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #4A90E2;
+            --secondary-blue: #6BA3E8;
+            --light-blue: #E8F4F8;
+            --pastel-grey: #F5F7FA;
+            --dark-grey: #5A6C7D;
+            --white: #FFFFFF;
+            --accent-gold: #F4B942;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-grey);
+            background: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--pastel-grey) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 40px rgba(74, 144, 226, 0.3);
+            margin: 0 auto 2rem;
+            object-fit: cover;
+            object-position: center 32%;
+            animation: scaleIn 1s ease-out 0.3s both;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Lora', serif;
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: var(--dark-grey);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(74, 144, 226, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gold);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Achievement Section */
+        .achievements {
+            background: var(--pastel-grey);
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
+        }
+
+        .achievement-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            font-size: 1rem;
+            color: var(--dark-grey);
+        }
+
+        /* Reviews Section */
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--light-blue);
+        }
+
+        .reviewer-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.2rem;
+        }
+
+        .stars {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--dark-grey);
+        }
+
+        /* Booking Section */
+        .booking {
+            background: var(--light-blue);
+        }
+
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .booking-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-grey);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--light-blue);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .coming-soon {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .coming-soon h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .coming-soon-badge {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Hours Section */
+        .hours-section {
+            background: var(--pastel-grey);
+        }
+
+        .hours-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hours-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .hours-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--light-blue);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Satisfaction Bars */
+        .satisfaction {
+            background: var(--white);
+        }
+
+        .satisfaction-bars {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .bar-container {
+            margin-bottom: 2.5rem;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .bar-bg {
+            height: 40px;
+            background: var(--light-blue);
+            border-radius: 50px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 50px;
+            position: relative;
+            animation: fillBar 2s ease-out;
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+        }
+
+        .bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Gallery */
+        .gallery-container {
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-scroll {
+            display: flex;
+            gap: 1rem;
+            animation: scroll 20s linear infinite;
+        }
+
+        .gallery-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .gallery-item {
+            min-width: 400px;
+            height: 300px;
+            background: var(--light-blue);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--dark-grey);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Q&A Section */
+        .qna {
+            background: var(--pastel-grey);
+        }
+
+        .qna-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .qna-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .qna-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: var(--primary-blue);
+            transition: background 0.3s ease;
+        }
+
+        .qna-question:hover {
+            background: var(--light-blue);
+        }
+
+        .qna-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .qna-answer.active {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        .ask-question-btn {
+            display: block;
+            margin: 2rem auto 0;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Interests */
+        .interests {
+            background: var(--light-blue);
+        }
+
+        .interests-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .interest-tag {
+            background: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .interest-tag:hover {
+            transform: scale(1.1);
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* YouTube */
+        .youtube-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .youtube-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .youtube-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .youtube-thumbnail {
+            width: 100%;
+            height: 250px;
+            background: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-blue);
+        }
+
+        .youtube-info {
+            background: var(--white);
+            padding: 1.5rem;
+        }
+
+        .youtube-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-icon:hover {
+            background: var(--accent-gold);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(244, 185, 66, 0.4);
+            border-color: var(--accent-gold);
+        }
+
+        .star-rating {
+            cursor: pointer;
+            color: #ddd;
+            transition: color 0.2s ease;
+        }
+
+        .star-rating:hover,
+        .star-rating.active {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-message {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .booking-container,
+            .hours-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="icons/pp.jpg" alt="Adil Shah" class="profile-photo">
+            <h1>Adil Shah <br> Clinical Psychologist</h1>
+            <p class="tagline">Healing minds through science, empathy, and insight</p>
+            <div class="cta-buttons">
+                <a href="#booking" class="btn btn-primary">Book Online Session</a>
+                <a href="#services" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <h2 class="section-title">Achievements & Impact</h2>
+        <div class="achievement-grid">
+            <div class="achievement-card">
+                <div class="achievement-icon">🏆</div>
+                <div class="achievement-number" data-target="3">0</div>
+                <div class="achievement-label">Years of Experience</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">🎖️</div>
+                <div class="achievement-number" data-target="8">0</div>
+                <div class="achievement-label">Professional Awards</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">🤝</div>
+                <div class="achievement-number" data-target="25">0</div>
+                <div class="achievement-label">Collaborations</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <h2 class="section-title">What My Clients Say</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-photo"></div>
+                    <div class="reviewer-info">
+                        <h4>Shayaan **231</h4>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-text">Dr.Adil has completely changed my perspective on therapy, he is a tremendous psychologist Mashallah. His empathetic approach and professional guidance helped me overcome years of anxiety. I'm forever grateful.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-photo"></div>
+                    <div class="reviewer-info">
+                        <h4>Saira ******waaz79</h4>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-text">The online sessions were incredibly, mujhy boht hi acha lga. I felt releifed and sessions were convenient and effective. Mr.Adil's motivational insights have transformed my daily life and career outlook.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-photo"></div>
+                    <div class="reviewer-info">
+                        <h4>Aisha ****an</h4>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-text">Finding a psychologist who understands both modern psychology and cultural sensitivity is rare. Adil is exceptional in every way.</p>
+            </div>
+        </div>
+
+        <!-- Review Submission Form -->
+        <div style="max-width: 700px; margin: 4rem auto 0;">
+            <h3 style="color: var(--primary-blue); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Share Your Experience</h3>
+            <div class="booking-form">
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email (will not be displayed publicly)</label>
+                        <input type="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Rating</label>
+                        <div style="display: flex; gap: 0.5rem; font-size: 2rem;">
+                            <span class="star-rating" onclick="setRating(1)">☆</span>
+                            <span class="star-rating" onclick="setRating(2)">☆</span>
+                            <span class="star-rating" onclick="setRating(3)">☆</span>
+                            <span class="star-rating" onclick="setRating(4)">☆</span>
+                            <span class="star-rating" onclick="setRating(5)">☆</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Review</label>
+                        <textarea rows="5" placeholder="Share your experience with Adil Shah's team..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+   <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <h2 class="section-title">Book Your Session</h2>
+        <div class="booking-container">
+            <div class="booking-form">
+                <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem;">Online Session via Zoom</h3>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="clientName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="clientEmail" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="clientPhone" placeholder="+1 (555) 000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" id="clientDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Time</label>
+                        <select id="clientTime" required>
+                            <option value="">Select a time</option>
+                            <option value="7pm">7:00 PM</option>
+                            <option value="8pm">8:00 PM</option>
+                            <option value="9pm">9:00 PM</option>
+                            <option value="10pm">10:00 PM</option>
+                            <option value="11pm">11:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Session Duration</label>
+                        <select id="sessionType" required>
+                            <option value="">Select session duration</option>
+                            <option value="15" data-price="699">15 Minutes Session ($699)</option>
+                            <option value="30" data-price="1199">30 Minutes Session ($1199)</option>
+                            <option value="45" data-price="1799">45 Minutes Session ($1799)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Notes (Optional)</label>
+                        <textarea id="clientNotes" rows="3" placeholder="Any specific concerns or topics you'd like to discuss..."></textarea>
+                    </div>
+                </form>
+                <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" onclick="showPaymentDetails()">Proceed to Payment</button>
+
+                <!-- Payment Details Modal -->
+                <div id="paymentModal" style="display: none; margin-top: 2rem; padding: 2rem; background: var(--light-blue); border-radius: 15px; border: 3px solid var(--primary-blue);">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem; text-align: center;">💳 Payment Details</h3>
+                    <div style="background: var(--white); padding: 2rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: var(--primary-blue);">Bank Name:</strong>
+                            <p style="font-size: 1.1rem; margin-top: 0.5rem;">Naya Pay</p>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: var(--primary-blue);">Account Number:</strong>
+                            <p style="font-size: 1.1rem; margin-top: 0.5rem; font-family: monospace; letter-spacing: 2px;">03392004171</p>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: var(--primary-blue);">Account Title:</strong>
+                            <p style="font-size: 1.1rem; margin-top: 0.5rem;">Adil Shah</p>
+                        </div>
+                        <div style="background: var(--accent-gold); padding: 1rem; border-radius: 8px; text-align: center;">
+                            <strong style="color: var(--white); font-size: 1.3rem;">Amount to Pay: $<span id="paymentAmount">0</span></strong>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="margin-bottom: 1rem; color: var(--dark-grey);">After making the payment, click below to share your receipt</p>
+                        <a href="https://ig.me/m/saiyedadilshah" target="_blank" class="btn btn-primary" style="display: inline-block; text-decoration: none;">
+                            📸 Payment Successful - Share Receipt on Instagram
+                        </a>
+                        <button type="button" class="btn btn-secondary" style="margin-left: 1rem;" onclick="closePaymentModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="coming-soon">
+                <span class="coming-soon-badge">COMING SOON</span>
+                <h3>Physical Sessions</h3>
+                <p style="margin-bottom: 1rem;">In-person therapy sessions at our clinic</p>
+                <p style="color: var(--dark-grey); font-size: 1.1rem; margin-bottom: 1rem;">📍 Johar Town, Lahore, Punjab, Pakistan</p>
+            </div>
+        </div>
+    </section>
+    <!-- Hours Section -->
+    <section class="hours-section">
+        <h2 class="section-title">Session Hours</h2>
+        <div class="hours-container">
+            <div class="hours-card">
+                <h3>Operating Hours</h3>
+                <ul class="hours-list">
+                    <li><span>Monday - Friday</span><span>7:00 PM - 10:00 PM</span></li>
+                    <li><span>Saturday</span><span></span>Closed</li>
+                    <li><span>Sunday</span><span>08:00 PM - 11:00 PM</span></li>
+                </ul>
+            </div>
+            <div class="hours-card">
+                <h3 id="countdown-title">Time Until Closing</h3>
+                <div class="countdown" id="countdown">Loading...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Satisfaction Section -->
+    <section class="satisfaction">
+        <h2 class="section-title">Patient Satisfaction</h2>
+        <div class="satisfaction-bars">
+            <div class="bar-container">
+                <div class="bar-label">
+                    <span>Patient Satisfaction</span>
+                    <span>5/5</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="bar-container">
+                <div class="bar-label">
+                    <span>Diagnosis Accuracy</span>
+                    <span>5/5</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title">Photo Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-scroll">
+                <div class="gallery-item" style="background-image: url('insta/5.jpg'); background-size: 90%; background-position: inherit;"></div>
+                <div class="gallery-item" style="background-image: url('insta/2.jpg'); background-size: 90%; background-position: center;"></div>
+                <div class="gallery-item" style="background-image: url('insta/3.jpg'); background-size: 100%; background-position: center;"></div>
+                <div class="gallery-item" style="background-image: url('insta/4.jpg'); background-size: 100%; background-position: center;"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="gallery-item" style="background-image: url('insta/1.jpg'); background-size: 90%; background-position: center;"></div>
+                <div class="gallery-item" style="background-image: url('insta/2.jpg'); background-size: 90%; background-position: center;"></div>
+                <div class="gallery-item" style="background-image: url('insta/3.jpg'); background-size: 100%; background-position: center;"></div>
+                <div class="gallery-item" style="background-image: url('insta/4.jpg'); background-size: 100%; background-position: center;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q&A Section -->
+    <section class="qna">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="qna-container">
+            <div class="qna-item">
+                <div class="qna-question" onclick="toggleAnswer(this)">
+                    <span>How long is each therapy session?</span>
+                    <span>+</span>
+                </div>
+                <div class="qna-answer">
+                    <p>Standard therapy sessions are 15-45 minutes long. Initial consultations may take up to 45-60 minutes to ensure we thoroughly understand your needs and create an effective treatment plan.</p>
+                </div>
+            </div>
+            <div class="qna-item">
+                <div class="qna-question" onclick="toggleAnswer(this)">
+                    <span>How many sessions does it take to heal?</span>
+                    <span>+</span>
+                </div>
+                <div class="qna-answer">
+                    <p>Depends on the sevirty of condition, but usually 1-3 sessions are enough.</p>
+                </div>
+            </div>
+            <div class="qna-item">
+                <div class="qna-question" onclick="toggleAnswer(this)">
+                    <span>Are online sessions as effective as in-person?</span>
+                    <span>+</span>
+                </div>
+                <div class="qna-answer">
+                    <p>Research shows that online therapy can be equally effective for many conditions. The convenience and comfort of being in your own space often enhances the therapeutic experience.</p>
+                </div>
+            </div>
+            <div class="qna-item">
+                <div class="qna-question" onclick="toggleAnswer(this)">
+                    <span>What is your cancellation policy?</span>
+                    <span>+</span>
+                </div>
+                <div class="qna-answer">
+                    <p>I request at least 24 hours notice for cancellations or rescheduling. Late cancellations may incur a fee. I understand that emergencies happen and will work with you on a case-by-case basis.</p>
+                </div>
+            </div>
+            <button class="btn btn-primary ask-question-btn">Ask Your Question</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Therapy Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🧠</div>
+                <h3>Cognitive Behavioral Therapy</h3>
+                <p>Evidence-based approach to changing negative thought patterns and behaviors for lasting mental health improvement.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🕌</div>
+                <h3>Islamic Counseling</h3>
+                <p>Integrating spiritual values with psychological principles for holistic healing and personal growth.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💑</div>
+                <h3>Relationship Counseling</h3>
+                <p>Helping couples and families build stronger connections through improved communication and understanding.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">😰</div>
+                <h3>Anxiety & Stress Management</h3>
+                <p>Practical techniques and strategies to overcome anxiety disorders and manage daily stress effectively.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌟</div>
+                <h3>Motivational Coaching</h3>
+                <p>Empowering sessions designed to unlock your potential and achieve your personal and professional goals.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👨‍👩‍👧</div>
+                <h3>Family Therapy</h3>
+                <p>Creating healthier family dynamics through open dialogue and collaborative problem-solving approaches.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="interests">
+        <h2 class="section-title">Personal Interests</h2>
+        <div class="interests-container">
+            <div class="interest-tag">✍️ Depression</div>
+            <div class="interest-tag">✍️ Anxiety</div>
+            <div class="interest-tag">✍️ Drug Addicts</div>
+            <div class="interest-tag">✍️ Family Problems</div>
+            <div class="interest-tag">✍️ confidence training</div>
+            <div class="interest-tag">🧘 Mindfulness Practice</div>
+            <div class="interest-tag">📚 APA, PPA</div>
+            <div class="interest-tag">🎨 Art Therapy</div>
+            <div class="interest-tag">🎵 Music Therapy</div>
+        </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section id="youtube">
+        <h2 class="section-title">Watch & Learn(coming soon)</h2>
+        <div class="youtube-grid">
+            <div class="youtube-card">
+                <div class="youtube-thumbnail">▶️</div>
+                <div class="youtube-info">
+                    <h4>Understanding Anxiety: A Complete Guide</h4>
+                    <p>Learn about anxiety disorders and evidence-based coping strategies.</p>
+                </div>
+            </div>
+            <div class="youtube-card">
+                <div class="youtube-thumbnail">▶️</div>
+                <div class="youtube-info">
+                    <h4>5 Daily Habits for Mental Wellness</h4>
+                    <p>Simple practices that can transform your mental health journey.</p>
+                </div>
+            </div>
+            <div class="youtube-card">
+                <div class="youtube-thumbnail">▶️</div>
+                <div class="youtube-info">
+                    <h4>Overcoming Negative Thought Patterns</h4>
+                    <p>CBT techniques you can apply in your everyday life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>📧 Adilclinicalsessions@gmail.com</p>
+                    <p>📞 ******</p>
+                    <p>📍 Johar Town, Lahore</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#booking">Book Session</a>
+                    <a href="#services">Services</a>
+                    <a href="#reviews">Testimonials</a>
+                    <a href="#youtube">Resources</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://a262646-crypto.github.io/ADIL-SHAH" class="social-icon" title="Facebook">📘</a>
+                        <a href="https://linkedin.com/in/saied-adil-shah" class="social-icon" title="LinkedIn" target="_blank">💼</a>
+                        <a href="https://www.instagram.com/saiyedadilshah" class="social-icon" title="Instagram" target="_blank">📸</a>
+                        <a href="#" class="social-icon" title="Twitter">🐦</a>
+                        <a href="#" class="social-icon" title="YouTube">🎥</a>
+                    </div>
+                    <p style="margin-top: 1rem;"><b>Licensed Clinical Psychologist</b></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-message">"Stay well"</p>
+                <p>&copy; 2025 Adil Shah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animated Counter for Achievements
+        function animateCounters() {
+            const counters = document.querySelectorAll('.achievement-number');
+            const speed = 100;
+
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const increment = target / speed;
+
+                const updateCount = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.textContent = Math.ceil(count);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Intersection Observer for counter animation
+        const achievementsSection = document.querySelector('.achievements');
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateCounters();
+                observer.disconnect();
+            }
+        });
+        observer.observe(achievementsSection);
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const day = now.getDay();
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            const second = now.getSeconds();
+
+            let targetTime;
+            let title = '';
+
+            // Check if it's Sunday (closed)
+            if (day === 6) {
+                // Calculate time until Monday 9 AM
+                const tomorrow = new Date(now);
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(19, 0, 0, 0);
+                targetTime = tomorrow;
+                title = 'Session starts In';
+            }
+            // Saturday (10 AM - 4 PM)
+            else if (day === 0) {
+                if (hour < 20) {
+                    targetTime = new Date(now);
+                    targetTime.setHours(20, 0, 0, 0);
+                    title = 'Session starts In';
+                } else if (hour < 23) {
+                    targetTime = new Date(now);
+                    targetTime.setHours(23, 0, 0, 0);
+                    title = 'Closes In';
+                } else {
+                    const monday = new Date(now);
+                    monday.setDate(monday.getDate() + 1);
+                    monday.setHours(19, 0, 0, 0);
+                    targetTime = monday;
+                    title = 'Session starts In';
+                }
+            }
+            // Monday - Friday (9 AM - 6 PM)
+            else {
+                if (hour < 19) {
+                    targetTime = new Date(now);
+                    targetTime.setHours(19, 0, 0, 0);
+                    title = 'Session starts In';
+                } else if (hour < 22) {
+                    targetTime = new Date(now);
+                    targetTime.setHours(22, 0, 0, 0);
+                    title = 'Closes In';
+                } else {
+                 const tomorrow = new Date(now);
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    // If tomorrow is Saturday, skip to Sunday
+                    if (tomorrow.getDay() === 6) {
+                        tomorrow.setDate(tomorrow.getDate() + 1);
+                        tomorrow.setHours(20, 0, 0, 0);
+                    } 
+                    else {
+                        tomorrow.setHours(20, 0, 0, 0);
+                    }
+                    targetTime = tomorrow;
+                    title = 'Session starts In';
+                }
+            }
+
+            const diff = targetTime - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown-title').textContent = title;
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Q&A Toggle
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span:last-child');
+            
+            answer.classList.toggle('active');
+            icon.textContent = answer.classList.contains('active') ? '−' : '+';
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+       // Payment Modal Functions
+        function showPaymentDetails() {
+            const form = document.getElementById('bookingForm');
+            const sessionType = document.getElementById('sessionType');
+            
+            // Validate form fields
+            const name = document.getElementById('clientName').value;
+            const email = document.getElementById('clientEmail').value;
+            const phone = document.getElementById('clientPhone').value;
+            const date = document.getElementById('clientDate').value;
+            const time = document.getElementById('clientTime').value;
+            
+            if (!name || !email || !phone || !date || !time || !sessionType.value) {
+                alert('Please fill in all required fields before proceeding to payment.');
+                return;
+            }
+
+            // Get selected session price
+            const selectedOption = sessionType.options[sessionType.selectedIndex];
+            const price = selectedOption.getAttribute('data-price');
+            
+            if (!price) {
+                alert('Please select a session duration');
+                return;
+            }
+
+            // Show payment details
+            document.getElementById('paymentAmount').textContent = price;
+            document.getElementById('paymentModal').style.display = 'block';
+            
+            // Scroll to payment modal
+            setTimeout(() => {
+                document.getElementById('paymentModal').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        // Star Rating System
+        let selectedRating = 0;
+
+        function setRating(rating) {
+            selectedRating = rating;
+            const stars = document.querySelectorAll('.star-rating');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.textContent = '★';
+                    star.classList.add('active');
+                } else {
+                    star.textContent = '☆';
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        // Review Form Submission
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (selectedRating === 0) {
+                alert('Please select a rating before submitting your review.');
+                return;
+            }
+            alert('Thank you for your review! It will be published after verification.');
+            this.reset();
+            selectedRating = 0;
+            document.querySelectorAll('.star-rating').forEach(star => {
+                star.textContent = '☆';
+                star.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
